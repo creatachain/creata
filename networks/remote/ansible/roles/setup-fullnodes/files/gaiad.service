@@ -1,0 +1,17 @@
+[Unit]
+Description=creatad
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Restart=on-failure
+User=creatad
+Group=creatad
+PermissionsStartOnly=true
+ExecStart=/usr/bin/creatad start
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target
+

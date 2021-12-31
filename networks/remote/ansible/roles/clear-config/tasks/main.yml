@@ -1,0 +1,9 @@
+---
+- name: Stop service
+  service: name=creatad state=stopped
+
+- name: Delete files
+  file: "path={{item}} state=absent"
+  with_items:
+    - /usr/bin/creatad
+    - /home/creatad/.creata

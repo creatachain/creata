@@ -1,0 +1,15 @@
+init_config:
+
+instances:
+- name: ssh
+  search_string: ['ssh', 'sshd']
+  thresholds:
+    critical: [1, 5]
+- name: creatad
+  search_string: ['creatad']
+  thresholds:
+    critical: [1, 1]
+- name: creatacli
+  search_string: ['creatacli']
+  thresholds:
+    critical: [1, 1]

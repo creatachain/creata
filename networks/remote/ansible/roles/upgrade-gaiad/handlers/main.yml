@@ -1,0 +1,5 @@
+---
+
+- name: restart creatad
+  service: name=creatad state=restarted
+

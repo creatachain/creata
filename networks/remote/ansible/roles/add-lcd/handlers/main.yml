@@ -1,0 +1,9 @@
+---
+
+- name: systemctl
+  systemd: name=creatacli enabled=yes daemon_reload=yes
+
+- name: restart creatacli
+  service: name=creatacli state=restarted
+
+

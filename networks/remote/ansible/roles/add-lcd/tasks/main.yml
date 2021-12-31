@@ -1,0 +1,15 @@
+---
+
+- name: Copy binary
+  copy:
+    src: "{{CREATACLI_BINARY}}"
+    dest: /usr/bin/creatacli
+    mode: 0755
+  notify: restart creatacli
+
+- name: Copy service
+  template:
+    src: creatacli.service.j2
+    dest: /etc/systemd/system/creatacli.service
+  notify: systemctl
+

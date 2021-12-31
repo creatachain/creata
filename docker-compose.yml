@@ -1,0 +1,68 @@
+version: '3'
+
+services:
+  creatadnode0:
+    container_name: creatadnode0
+    image: "augusteum/creatadnode"
+    ports:
+      - "26656-26657:26656-26657"
+    environment:
+      - ID=0
+      - LOG=${LOG:-creatad.log}
+    volumes:
+      - ./build:/creatad:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.2
+
+  creatadnode1:
+    container_name: creatadnode1
+    image: "augusteum/creatadnode"
+    ports:
+      - "26659-26660:26656-26657"
+    environment:
+      - ID=1
+      - LOG=${LOG:-creatad.log}
+    volumes:
+      - ./build:/creatad:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.3
+
+  creatadnode2:
+    container_name: creatadnode2
+    image: "augusteum/creatadnode"
+    environment:
+      - ID=2
+      - LOG=${LOG:-creatad.log}
+    ports:
+      - "26661-26662:26656-26657"
+    volumes:
+      - ./build:/creatad:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.4
+
+  creatadnode3:
+    container_name: creatadnode3
+    image: "augusteum/creatadnode"
+    environment:
+      - ID=3
+      - LOG=${LOG:-creatad.log}
+    ports:
+      - "26663-26664:26656-26657"
+    volumes:
+      - ./build:/creatad:Z
+    networks:
+      localnet:
+        ipv4_address: 192.168.10.5
+
+networks:
+  localnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      -
+        subnet: 192.168.10.0/16
+

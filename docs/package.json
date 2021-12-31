@@ -1,0 +1,21 @@
+{
+  "name": "creata-docs",
+  "version": "1.0.0",
+  "description": "Creata Documentation",
+  "main": "index.js",
+  "dependencies": {
+    "vuepress-theme-creata": "^1.0.180"
+  },
+  "scripts": {
+    "serve": "trap 'exit 0' SIGINT; vuepress dev --no-cache",
+    "build": "trap 'exit 0' SIGINT; vuepress build --no-cache"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [
+    "creatachain",
+    "creata",
+    "creatachain hub",
+    "ucta"
+  ]
+}

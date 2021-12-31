@@ -1,0 +1,17 @@
+[Unit]
+Description=creatacli
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Restart=on-failure
+User=creatad
+Group=creatad
+PermissionsStartOnly=true
+ExecStart=/usr/bin/creatacli rest-server --laddr {{CREATACLI_ADDRESS}}
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target
+

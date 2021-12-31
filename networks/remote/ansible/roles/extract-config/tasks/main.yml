@@ -1,0 +1,14 @@
+---
+
+- name: Fetch genesis.json
+  fetch: "src=/home/creatad/.creata/config/genesis.json dest={{GENESISFILE}} flat=yes"
+  run_once: yes
+  become: yes
+  become_user: creatad
+
+- name: Fetch config.toml
+  fetch: "src=/home/creatad/.creata/config/config.toml dest={{CONFIGFILE}} flat=yes"
+  run_once: yes
+  become: yes
+  become_user: creatad
+
